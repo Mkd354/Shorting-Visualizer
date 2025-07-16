@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>
+          <i class="fas fa-sort-amount-up"></i> Sorting Algorithm Visualizer
+        </h1>
+      </header>
+
+      <div class="controls-section">
+        <div class="input-controls">
+          <div class="input-group">
+            <label for="arraySize">Array Size:</label>
+            <input type="number" id="arraySize" min="5" max="100" value="20" />
+          </div>
+
+          <div class="input-group">
+            <label for="customArray">Custom Array (comma-separated):</label>
+            <input
+              type="text"
+              id="customArray"
+              placeholder="e.g., 64,34,25,12,22,11,90"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="algorithm">Algorithm:</label>
+            <select id="algorithm">
+              <option value="bubble">Bubble Sort</option>
+              <option value="selection">Selection Sort</option>
+              <option value="insertion">Insertion Sort</option>
+              <option value="quick">Quick Sort</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button id="generateArray" class="btn btn-primary">
+            <i class="fas fa-random"></i> Generate Random Array
+          </button>
+          <button id="setCustomArray" class="btn btn-secondary">
+            <i class="fas fa-edit"></i> Set Custom Array
+          </button>
+          <button id="startSort" class="btn btn-success">
+            <i class="fas fa-play"></i> Start Sorting
+          </button>
+          <button id="pauseSort" class="btn btn-warning" disabled>
+            <i class="fas fa-pause"></i> Pause
+          </button>
+          <button id="resetArray" class="btn btn-danger">
+            <i class="fas fa-undo"></i> Reset
+          </button>
+        </div>
+
+        <div class="speed-control">
+          <label for="speedSlider">Animation Speed:</label>
+          <input type="range" id="speedSlider" min="1" max="10" value="5" />
+          <span id="speedValue">5</span>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <div class="algorithm-info">
+          <span id="currentAlgorithm">Current Algorithm: Bubble Sort</span>
+          <span id="stepCount">Steps: 0</span>
+          <span id="comparisons">Comparisons: 0</span>
+          <span id="swaps">Swaps: 0</span>
+        </div>
+      </div>
+
+      <div class="visualization-container">
+        <div id="arrayContainer" class="array-container">
+          <!-- Array bars will be generated here -->
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color default"></div>
+          <span>Unsorted</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color comparing"></div>
+          <span>Comparing</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color swapping"></div>
+          <span>Swapping</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color sorted"></div>
+          <span>Sorted</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color pivot"></div>
+          <span>Pivot (Quick Sort)</span>
+        </div>
+      </div>
+
+      <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
