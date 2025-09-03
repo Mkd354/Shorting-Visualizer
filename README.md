@@ -1,6 +1,6 @@
 
 
-📊 Sorting Algorithm Visualizer
+📊 Sorting Algorithm Visualizer : https://mkd354.github.io/Shorting-Visualizer/
 
 A Sorting Algorithm Visualizer built with JavaScript, HTML, and CSS. This interactive tool allows you to visualize popular sorting algorithms step by step. You can generate random arrays, set custom arrays, adjust animation speed, and see how each algorithm works in real time.
 
